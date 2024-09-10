@@ -588,3 +588,20 @@ const testExperimentSummary = async () => {
 };
 // uncomment below ---
 // testExperimentSummary();
+
+
+
+async function batchRunsByExperimentId(experiment_id, run_names_array, params_array, metrics_array, model_array) {
+  if (!experiment_id) {
+    throw new Error('Experiment ID is required');
+  }
+
+  function checkEqualLengths(...arrays) {
+    if (arrays.length < 2) {
+      return true;
+    }
+  
+    const firstLength = arrays[0].length;
+    return arrays.every(array => array.length === firstLength);
+  }
+};
